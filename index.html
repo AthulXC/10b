@@ -1,92 +1,72 @@
-
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>XC Studios</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #eee;
-    }header {
-  background-color: #222;
-  padding: 15px 0;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Athul RGB Shadow</title>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #111;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
 
-header h1 {
-  margin: 0;
-  color: #00bcd4;
-  letter-spacing: 2px;
-}
+  h1 {
+    font-size: 5rem;
+    color: black;
+    text-transform: uppercase;
+    animation: shadowRGB 3s infinite;
+    margin-bottom: 50px;
+  }
 
-nav {
-  display: flex;
-  justify-content: center;
-  background-color: #333;
-  padding: 10px 0;
-}
+  @keyframes shadowRGB {
+    0% {
+      text-shadow: 2px 2px 5px red, -2px -2px 5px blue, 2px -2px 5px green;
+    }
+    25% {
+      text-shadow: 2px 2px 5px orange, -2px -2px 5px purple, 2px -2px 5px cyan;
+    }
+    50% {
+      text-shadow: 2px 2px 5px yellow, -2px -2px 5px pink, 2px -2px 5px lime;
+    }
+    75% {
+      text-shadow: 2px 2px 5px cyan, -2px -2px 5px magenta, 2px -2px 5px orange;
+    }
+    100% {
+      text-shadow: 2px 2px 5px red, -2px -2px 5px blue, 2px -2px 5px green;
+    }
+  }
 
-nav a {
-  color: #eee;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-  transition: color 0.3s;
-}
+  footer {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+  }
 
-nav a:hover {
-  color: #00bcd4;
-}
+  footer a {
+    color: #00f;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
 
-section {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #1a1a1a;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #222;
-  color: #777;
-  margin-top: 40px;
-}
-
-  </style>
+  footer a:hover {
+    color: #0ff;
+  }
+</style>
 </head>
-<body>  <header>
-    <h1>XC Studios</h1>
-    <p>DEVELOPER</p>
-  </header>  <nav>
-    <a href="#home">Home</a>
-    <a href="#mods">Mods</a>
-    <a href="#authors">Authors</a>
-    <a href="#contact">Contact Us</a>
-    <a href="#more">More</a>
-  </nav>  <section id="home">
-    <h2>Welcome to XC Studios</h2>
-    <p> Explore our projects and see what we’re working on!</p>
-  </section>  <section id="mods">
-    <h2>Our Mods</h2>
-    <p>EXPLORE</p>
-  </section>  <section id="authors">
-    <h2>Authors</h2>
-    <p>Meet our talented team of developers, designers, and mod creators who bring ideas to life.</p>
-  </section>  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: xcstudios.dev@example.com</p>
-    <p>Discord: https://discord.gg/C2UDBzHn</p>
-  </section>  <section id="more">
-    <h2>More</h2>
-    <p>Stay tuned for updates, tools, and tutorials from XC Studios!@athul and amal</p>
-  </section>  <footer>
-    <p>&copy; 2025 XC Studios. All rights reserved.</p>
-  </footer></body>
+<body>
+  <h1>Athul</h1>
+
+  <footer>
+    Made with ❤️ by <a href="https://github.com/AthulXC" target="_blank">AthulXC</a>
+  </footer>
+</body>
 </html>
