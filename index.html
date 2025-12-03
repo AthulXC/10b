@@ -1,72 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Athul RGB Shadow</title>
-<style>
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #111;
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-  }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>10B — SNDPYHSS Neeravil — Our Class</title>
+  <meta name="description" content="10B class page: Teachers, Boys, Girls, memories. Developed & Maintained by AthulXC at XCSTUDIOS.">
 
-  h1 {
-    font-size: 5rem;
-    color: black;
-    text-transform: uppercase;
-    animation: shadowRGB 3s infinite;
-    margin-bottom: 50px;
-  }
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  @keyframes shadowRGB {
-    0% {
-      text-shadow: 2px 2px 5px red, -2px -2px 5px blue, 2px -2px 5px green;
+  <style>
+    :root{
+      --bg1:#ff9a9e; --bg2:#fad0c4;
+      --card: rgba(255,255,255,0.92);
+      --accent:#ff6b81; --muted:#666;
+      --glass: rgba(255,255,255,0.14);
     }
-    25% {
-      text-shadow: 2px 2px 5px orange, -2px -2px 5px purple, 2px -2px 5px cyan;
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:"Poppins",system-ui,Roboto,Arial;-webkit-font-smoothing:antialiased}
+    body{
+      background:
+        radial-gradient(circle at 10% 15%, rgba(255,255,255,0.06), transparent 8%),
+        linear-gradient(135deg,var(--bg1),var(--bg2));
+      color:#222;padding:28px;display:flex;justify-content:center;
     }
-    50% {
-      text-shadow: 2px 2px 5px yellow, -2px -2px 5px pink, 2px -2px 5px lime;
-    }
-    75% {
-      text-shadow: 2px 2px 5px cyan, -2px -2px 5px magenta, 2px -2px 5px orange;
-    }
-    100% {
-      text-shadow: 2px 2px 5px red, -2px -2px 5px blue, 2px -2px 5px green;
-    }
-  }
 
-  footer {
-    position: absolute;
-    bottom: 10px;
-    text-align: center;
-    color: #fff;
-    font-size: 1rem;
-  }
+    /* floating hearts */
+    .hearts{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+    .heart{position:absolute;width:26px;height:26px;background:linear-gradient(45deg,#ff6b81,#ffd1dc);transform:rotate(45deg);border-radius:6px 6px 0 0;opacity:0.9;animation:floatUp 10s linear infinite}
+    .heart::before,.heart::after{content:"";position:absolute;width:26px;height:26px;background:inherit;border-radius:50%}
+    .heart::before{top:-13px;left:0} .heart::after{top:0;left:13px}
+    @keyframes floatUp{0%{transform:translateY(0) rotate(45deg) scale(0.9);opacity:0}10%{opacity:0.9}100%{transform:translateY(-150vh) rotate(45deg) scale(1.1);opacity:0}}
 
-  footer a {
-    color: #00f;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
+    .wrap{width:min(1100px,96%);position:relative;z-index:1}
+    header{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+    .logo{width:68px;height:68px;border-radius:14px;background:linear-gradient(135deg,rgba(255,255,255,0.25),rgba(255,255,255,0.05));display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:26px;border:2px solid rgba(255,255,255,0.15)}
+    h1{margin:0;font-size:22px}
+    p.lead{margin:0;color:var(--muted);font-size:13px}
 
-  footer a:hover {
-    color: #0ff;
-  }
-</style>
+    .card{background:var(--card);border-radius:14px;padding:14px;box-shadow:0 10px 30px rgba(11,11,11,0.08);margin-bottom:20px}
+    .card h2{margin:0 0 10px 0}
+    .list{display:flex;flex-direction:column;gap:8px}
+    .item{padding:8px 10px;border-radius:10px;background:var(--glass);display:flex;justify-content:flex-start;align-items:center}
+    .muted{color:var(--muted);font-size:13px}
+
+    .memories-text{font-size:14px;line-height:1.5;color:var(--muted);padding-top:6px}
+
+    footer{margin-top:14px;text-align:center;font-size:14px;color:white}
+
+    @media (max-width:980px){
+      header{flex-direction:column;align-items:flex-start}
+    }
+  </style>
 </head>
 <body>
-  <h1>Athul</h1>
+  <div class="hearts" aria-hidden="true"></div>
 
-  <footer>
-    Made with ❤️ by <a href="https://github.com/AthulXC" target="_blank">AthulXC</a>
-  </footer>
+  <div class="wrap">
+    <header>
+      <div class="logo">SN</div>
+      <div>
+        <h1>10B — SNDPYHSS Neeravil</h1>
+        <p class="lead">Our class page — teachers, classmates, and memories.</p>
+      </div>
+    </header>
+
+    <!-- Teachers -->
+    <section class="card">
+      <h2>Teachers — 10B</h2>
+      <div id="teachersList" class="list"></div>
+    </section>
+
+    <!-- Boys -->
+    <section class="card">
+      <h2>Boys — 10B</h2>
+      <div id="boysList" class="list"></div>
+    </section>
+
+    <!-- Girls -->
+    <section class="card">
+      <h2>Girls — 10B</h2>
+      <div id="girlsList" class="list"></div>
+    </section>
+
+    <!-- Memories -->
+    <section class="card">
+      <h2>10B Memories</h2>
+      <div class="memories-text">
+        10B was more than a class — it was a family. Laughter, lessons, friendship, and unforgettable moments filled every day. From the first bell to the last, we shared joys, struggles, and dreams. Our teachers guided us, and our classmates stood by us. Even now,high school, these memories remain in our hearts forever.
+      </div>
+    </section>
+
+    <footer>
+      Developed &amp; Maintained by AthulXC at XCSTUDIOS
+    </footer>
+  </div>
+
+  <script>
+    // Teachers
+    const teachers = [
+      {subject:"Malayalam", teacher:"Lola tr"},
+      {subject:"English", teacher:"Winnie tr"},
+      {subject:"Hindi", teacher:"Smitha tr"},
+      {subject:"Social", teacher:"Shyam sir"},
+      {subject:"Physics", teacher:"Aneesh sir"},
+      {subject:"Chemistry", teacher:"Jaya tr"},
+      {subject:"Biology", teacher:"Saji tr"},
+      {subject:"Maths", teacher:"Jyothi tr"},
+      {subject:"Class Teacher", teacher:"Saji tr"}
+    ];
+
+    // Boys
+    let boys = ["Adhithyan","Akhill","Athul (Developer)","Adwaith","Devanand","Akshit",
+                "Akash","Ajaybose","Devanandan","Sreehari","Sterin","Rejith","Karthik","Fayas","Jaseem","Santo"];
+
+    // Girls
+    let girls = ["Ameya","Devu","Jayaleksmi L","Malavika","Arya","Ayisha","Sredha",
+                 "Aldrina","Anusree","Durga","Vaiga","Shancia","Devinandana","Ashwini","Darshana","Jayaleksmi"];
+
+    // Shuffle remaining boys after top 6
+    function shuffleArray(arr,startIndex=0){
+      for(let i=arr.length-1;i>startIndex;i--){
+        const j=Math.floor(Math.random()*(i-startIndex+1))+startIndex;
+        [arr[i],arr[j]]=[arr[j],arr[i]];
+      }
+    }
+    shuffleArray(boys,6);
+    shuffleArray(girls,1); // keep Ameya on top
+
+    function renderList(arr, containerId){
+      const ul = document.getElementById(containerId);
+      ul.innerHTML = "";
+      arr.forEach(name=>{
+        const li = document.createElement("div");
+        li.className="item";
+        li.textContent = name;
+        ul.appendChild(li);
+      });
+    }
+
+    function renderTeachers(){
+      const ul = document.getElementById("teachersList");
+      ul.innerHTML="";
+      teachers.forEach(t=>{
+        const li=document.createElement("div");
+        li.className="item";
+        li.innerHTML = `<strong>${t.subject}</strong> — <span class="muted">${t.teacher}</span>`;
+        ul.appendChild(li);
+      });
+    }
+
+    renderTeachers();
+    renderList(boys,"boysList");
+    renderList(girls,"girlsList");
+
+    // Floating hearts
+    (function makeHearts(){
+      const container = document.querySelector('.hearts');
+      const count = 20;
+      for(let i=0;i<count;i++){
+        const h=document.createElement('div');
+        h.className='heart';
+        h.style.left=Math.random()*100+'vw';
+        h.style.top=Math.random()*100+'vh';
+        h.style.animationDelay=Math.random()*8+'s';
+        h.style.animationDuration=(8+Math.random()*8)+'s';
+        h.style.transform='rotate(45deg) scale('+(0.7+Math.random()*0.9)+')';
+        h.style.opacity=0.7+Math.random()*0.3;
+        container.appendChild(h);
+      }
+    })();
+  </script>
 </body>
 </html>
