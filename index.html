@@ -57,7 +57,7 @@
 
   <div class="wrap">
     <header>
-      <div class="logo">SN</div>
+      <div class="logo">XC</div>
       <div>
         <h1>10B — SNDPYHSS Neeravil</h1>
         <p class="lead">Our class page — teachers, classmates, and memories.</p>
@@ -86,7 +86,7 @@
     <section class="card">
       <h2>10B Memories</h2>
       <div class="memories-text">
-        10B was more than a class — it was a family. Laughter, lessons, friendship, and unforgettable moments filled every day. From the first bell to the last, we shared joys, struggles, and dreams. Our teachers guided us, and our classmates stood by us. Even now,high school, these memories remain in our hearts forever.
+        10B was more than a class — it was a family. Laughter, lessons, friendship, and unforgettable moments filled every day. From the first bell to the last, we shared joys, struggles, and dreams. Our teachers guided us, and our classmates stood by us. Even now, high school, these memories remain in our hearts forever.
       </div>
     </section>
 
@@ -96,10 +96,10 @@
   </div>
 
   <script>
-    // Teachers
+    // Teachers (corrected Winny)
     const teachers = [
       {subject:"Malayalam", teacher:"Lola tr"},
-      {subject:"English", teacher:"Winnie tr"},
+      {subject:"English", teacher:"Winny tr"},
       {subject:"Hindi", teacher:"Smitha tr"},
       {subject:"Social", teacher:"Shyam sir"},
       {subject:"Physics", teacher:"Aneesh sir"},
@@ -109,15 +109,15 @@
       {subject:"Class Teacher", teacher:"Saji tr"}
     ];
 
-    // Boys
-    let boys = ["Adhithyan","Akhill","Athul (Developer)","Adwaith","Devanand","Akshit",
+    // Boys (Akhil corrected)
+    let boys = ["Adhithyan","Akhil","Athul (Developer of the site)","Adwaith","Devanand","Akshit",
                 "Akash","Ajaybose","Devanandan","Sreehari","Sterin","Rejith","Karthik","Fayas","Jaseem","Santo"];
 
-    // Girls
-    let girls = ["Ameya","Devu","Jayaleksmi L","Malavika","Arya","Ayisha","Sredha",
-                 "Aldrina","Anusree","Durga","Vaiga","Shancia","Devinandana","Ashwini","Darshana","Jayaleksmi"];
+    // Girls (Amaya on top, Darsana & Ashwani corrected)
+    let girls = ["Amaya","Devu","Jayaleksmi L","Malavika","Arya","Ayisha","Sredha",
+                 "Aldrina","Anusree","Durga","Vaiga","Shancia","Devinandana","Ashwani","Darsana","Jayaleksmi"];
 
-    // Shuffle remaining boys after top 6
+    // Shuffle remaining boys after top 6 and girls after top 1
     function shuffleArray(arr,startIndex=0){
       for(let i=arr.length-1;i>startIndex;i--){
         const j=Math.floor(Math.random()*(i-startIndex+1))+startIndex;
@@ -125,7 +125,7 @@
       }
     }
     shuffleArray(boys,6);
-    shuffleArray(girls,1); // keep Ameya on top
+    shuffleArray(girls,1); // keep Amaya on top
 
     function renderList(arr, containerId){
       const ul = document.getElementById(containerId);
